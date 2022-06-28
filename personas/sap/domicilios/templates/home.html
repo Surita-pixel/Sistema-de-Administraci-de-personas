@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Domicilios</title>
+</head>
+
+<body>
+    <h1>Registro de domicilio</h1>
+    <div>Numero de domicilio: {{no_domicilio}}</div>
+    <div>
+        <table border="1">
+            <thead>
+                <tr>
+                    <th>Id</th>
+                    <th>Ciudad</th>
+                    <th>Barrio</th>
+                    <th>Numero de Calle</th>
+                    <th>Numerto de avenida</th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for domicilio in domicilios%}
+                <tr>
+                    <td>{{domicilio.id}}</td>
+                    <td>{{domicilio.ciudad}}</td>
+                    <td>{{domicilio.barrio}}</td>
+                    <td>{{domicilio.no_calle}}</td>
+                    <td>{{domicilio.no_avenida}}</td>
+                    <td><a href="detalle_domicilio/{{domicilio.id}}">Ver</a></td>
+                    <td><a href="editar_domicilio/{{domicilio.id}}">editar</a></td>
+                    <td><a href="eliminar_domicilio/{{domicilio.id}}">eliminar</a></td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+    <div>
+        <a href="crear_domicilio">agregar domicilio</a>
+        <a href="../">Inicio</a>
+    </div>
+</body>
+
+</html>
